@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Linus
+        </title>
+        <style>
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 25%;
+            height: 25%;
+        }
+        body {
+            background-color: gray
+        }
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif 
+        }
+        p {
+            text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>All About Linus</h1>
+        <img src="Linus.jpg" height=300px class="center" >
+        <p>Linus was born on November 26th, 2016. He is now
+        <em id="age"></em>
+        days old.
+        </p>
+        <p>We adopted Linus on January 25th, 2017, which means we have had him in our home for
+            <em id="adoptedTime"></em> days.
+        </p>
+        <p> We adopted Linus from <a href="http://cfp-nc.org/">Cause For Paws </a> which is a local
+        rescue group for dogs in the Raleigh area. He was found on the street along
+        with a brother and sister. Cause for Paws named the trio after characters from
+        the Peanuts. We decided to keep Linus' name because we thought it fit him.</p>
+        <script>
+            function getDays(year,month,day) {
+                var  current = new Date();
+                var  birth = new Date(year,month,day);
+                var daysOld = Math.floor((current-birth)/(1000 * 60 * 60 * 24));
+                return daysOld;
+            }
+            document.getElementById("age").innerHTML=getDays(2016,11,26);
+            document.getElementById("adoptedTime").innerHTML=getDays(2017,1,25);
+        </script>
+    </body>
+</html>
